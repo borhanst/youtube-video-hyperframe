@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <template>
+    <style>
+      #root { position: absolute; inset: 0; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); overflow: hidden; font-family: Roboto, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif; }
+      .cta-container { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+      .channel-name { font-size: 72px; font-weight: 800; color: #ffffff; text-shadow: 0 4px 24px rgba(0,0,0,0.5); margin-bottom: 8px; position: relative; z-index: 2; }
+      .tagline { font-size: 26px; color: #c4b5fd; letter-spacing: 0.08em; margin-bottom: 60px; position: relative; z-index: 2; }
+      .btn-host { position: absolute; inset: 0; z-index: 1; }
+    </style>
+    <div data-hf-id="hf-7zu2" id="root" data-composition-id="subscribe-cta" data-width="1920" data-height="1080" data-start="0" data-duration="17">
+      <div data-hf-id="hf-a96c" id="cta-container" class="cta-container clip" data-start="0" data-duration="17" data-track-index="0">
+        <div data-hf-id="hf-79k8" class="channel-name">Free Coder</div>
+        <div data-hf-id="hf-waea" class="tagline">LEARN BUILD AND SHARE</div>
+        <div data-hf-id="hf-sub-host" id="btn-host" class="btn-host clip" data-start="0" data-duration="17" data-track-index="1" data-composition-id="yt-subscribe-button" data-composition-src="compositions/yt-subscribe-button.html" data-variable-values="{&quot;posX&quot;:&quot;50%&quot;,&quot;posY&quot;:&quot;65%&quot;,&quot;btnScale&quot;:1.1}"></div>
+      </div>
+    </div>
+    <script>
+      const tl = gsap.timeline({ paused: true });
+      tl.fromTo(".channel-name", { opacity: 0, y: -40, scale: 0.9 }, { opacity: 1, y: 0, scale: 1, duration: 0.9, ease: "power3.out" }, 0);
+      tl.fromTo(".tagline", { opacity: 0, y: -30 }, { opacity: 1, y: 0, duration: 0.9, ease: "power3.out" }, 0.25);
+      window.__timelines["subscribe-cta"] = tl;
+    </script>
+  </template>
+</body>
+</html>

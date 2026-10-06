@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; background: #0f0f0f; font-family: Roboto, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif; overflow: hidden; }
+        .topbar { position: absolute; top: 0; left: 0; right: 0; height: 56px; display: flex; align-items: center; gap: 16px; padding: 0 16px; background: #0f0f0f; }
+        .logo { color: #fff; font-weight: 800; font-size: 20px; display: flex; align-items: center; gap: 6px; }
+        .logo .play { width: 0; height: 0; border-left: 10px solid #f00; border-top: 6px solid transparent; border-bottom: 6px solid transparent; }
+        .search { flex: 1; max-width: 720px; margin: 0 auto; background: #121212; border: 1px solid #303030; border-radius: 999px; height: 38px; color: #cfcfcf; display: flex; align-items: center; padding: 0 18px; font-size: 15px; }
+        .side { position: absolute; top: 56px; left: 0; bottom: 0; width: 240px; background: #0f0f0f; padding: 12px 10px; color: #f1f1f1; font-size: 15px; }
+        .side .item { display: flex; align-items: center; gap: 22px; padding: 9px 14px; border-radius: 10px; }
+        .side .item.active { background: #272727; font-weight: 600; }
+        .side .dot { width: 5px; height: 5px; border-radius: 50%; background: #3ea6ff; margin-left: auto; }
+        .side hr { border: none; border-top: 1px solid #272727; margin: 10px 8px; }
+        .side h4 { padding: 8px 14px 4px; font-size: 16px; }
+        .main { position: absolute; top: 56px; left: 240px; right: 0; bottom: 0; padding: 20px 28px; overflow: hidden; }
+        .banner { height: 208px; border-radius: 16px; background: linear-gradient(115deg, #7c3aed 0%, #312e81 45%, #1e3a8a 100%); position: relative; overflow: hidden; }
+        .banner .django { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); background: #4c1d95; border-radius: 6px; padding: 18px 60px; text-align: center; }
+        .banner .django b { color: #ffffff; font-size: 30px; display: block; }
+        .banner .django span { color: #c4b5fd; font-size: 13px; letter-spacing: 0.2em; }
+        .profile { display: flex; gap: 24px; margin-top: 22px; align-items: center; }
+        .avatar { width: 132px; height: 132px; border-radius: 50%; background: #e8f5e9; display: flex; align-items: center; justify-content: center; color: #0f766e; font-weight: 800; font-size: 16px; text-align: center; border: 4px solid #1a1a1a; overflow: hidden; }
+        .avatar img { width: 100%; height: 100%; object-fit: cover; }
+        .p-name { font-size: 34px; font-weight: 700; color: #f1f1f1; }
+        .p-meta { color: #e0e0e0; font-size: 15px; margin-top: 6px; }
+        .p-desc { color: #eeeeee; font-size: 14px; margin-top: 10px; }
+        .btns { display: flex; gap: 10px; margin-top: 16px; }
+        .btn { display: inline-block; border-radius: 999px; padding: 9px 16px; font-size: 14px; font-weight: 600; }
+        .btn.dark { background: #272727; color: #f1f1f1; }
+        .btn.blue { background: #1d4ed8; color: #ffffff; }
+        .tabs { display: flex; gap: 26px; margin-top: 22px; border-bottom: 1px solid #272727; padding-bottom: 12px; color: #e0e0e0; font-size: 15px; font-weight: 600; }
+        .tabs .on { color: #f1f1f1; border-bottom: 3px solid #f1f1f1; padding-bottom: 10px; }
+        .sect { margin-top: 22px; color: #f1f1f1; font-size: 20px; font-weight: 700; }
+        .videos { display: flex; gap: 16px; margin-top: 16px; }
+        .v { width: 262px; }
+        .thumb { height: 148px; border-radius: 12px; position: relative; overflow: hidden; }
+        .thumb .dur { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,0.8); color: #fff; font-size: 12px; padding: 2px 6px; border-radius: 4px; }
+        .v h5 { color: #f1f1f1; font-size: 14px; margin-top: 10px; line-height: 1.35; height: 38px; overflow: hidden; }
+        .v p { color: #e0e0e0; font-size: 12px; margin-top: 4px; }
+        .t1 { background: linear-gradient(135deg, #4c1d95, #7c3aed); }
+        .t2 { background: linear-gradient(135deg, #064e3b, #10b981); }
+        .t3 { background: linear-gradient(135deg, #1e3a8a, #3b82f6); }
+        .t4 { background: linear-gradient(135deg, #7f1d1d, #ef4444); }
+        .t5 { background: linear-gradient(135deg, #78350f, #f59e0b); }
+        .t6 { background: linear-gradient(135deg, #111827, #6366f1); }
+      </style>
+
+      <div data-hf-id="hf-54tg" id="root" data-composition-id="yt-channel-page" data-width="1920" data-height="1080" data-start="0" data-duration="8">
+        <div data-hf-id="hf-4y4p" id="page" class="clip" data-start="0" data-duration="8" data-track-index="0">
+          <div data-hf-id="hf-mndw" class="topbar">
+            <div data-hf-id="hf-h686" class="logo"><span data-hf-id="hf-mgmf" class="play"></span>YouTube</div>
+            <div data-hf-id="hf-ux6g" class="search">Search</div>
+          </div>
+          <div data-hf-id="hf-cww1" class="side">
+            <div data-hf-id="hf-ffam" class="item active">Home</div>
+            <div data-hf-id="hf-zhei" class="item">Shorts</div>
+            <div data-hf-id="hf-ezqi" class="item">Daily Ideas</div>
+            <div data-hf-id="hf-rjgv" class="item">Thumbnail Preview</div>
+            <div data-hf-id="hf-tsgz" class="item">More Tools</div>
+            <hr data-hf-id="hf-bfmn">
+            <h4 data-hf-id="hf-ktr5">Subscriptions</h4>
+            <div data-hf-id="hf-jpcf" class="item">Better Stack<span data-hf-id="hf-9gry" class="dot"></span></div>
+            <div data-hf-id="hf-0lnr" class="item">Islamic Video Ba…<span data-hf-id="hf-zcc2" class="dot"></span></div>
+            <div data-hf-id="hf-fwon" class="item">ArjanCodes<span data-hf-id="hf-zqn3" class="dot"></span></div>
+            <div data-hf-id="hf-aonw" class="item">Indently<span data-hf-id="hf-04y4" class="dot"></span></div>
+            <hr data-hf-id="hf-27of">
+            <h4 data-hf-id="hf-r7p4">You</h4>
+            <div data-hf-id="hf-sk7d" class="item active">Your channel</div>
+            <div data-hf-id="hf-jemv" class="item">History</div>
+            <div data-hf-id="hf-73xc" class="item">Playlists</div>
+          </div>
+          <div data-hf-id="hf-k15r" class="main">
+            <div data-hf-id="hf-kizu" class="banner"><div data-hf-id="hf-kcch" class="django"><b data-hf-id="hf-pmzl">django hub</b><span data-hf-id="hf-zifj">LEARN BUILD AND SHARE</span></div></div>
+            <div data-hf-id="hf-jvb3" class="profile">
+              <div data-hf-id="hf-o4a3" class="avatar"><img data-hf-id="hf-cysf" src="assets/avatar.jpg" alt="avatar"></div>
+              <div data-hf-id="hf-yeow">
+                <div data-hf-id="hf-8gub" class="p-name">Free Coder</div>
+                <div data-hf-id="hf-e2sr" class="p-meta">@therefactorengine · 187 subscribers · 106 videos</div>
+                <div data-hf-id="hf-r7o1" class="p-desc">This is an Educational Channel. Here We Teach you python Programming language. Learn …more</div>
+                <div data-hf-id="hf-5u2b" class="btns">
+                  <span data-hf-id="hf-3v5f" class="btn dark">Customize channel</span>
+                  <span data-hf-id="hf-evpa" class="btn dark">Manage videos</span>
+                  <span data-hf-id="hf-pj4k" class="btn blue">View channel stats</span>
+                </div>
+              </div>
+            </div>
+            <div data-hf-id="hf-5rmk" class="tabs"><span data-hf-id="hf-5sg1" class="on">Home</span><span data-hf-id="hf-5u95">Videos</span><span data-hf-id="hf-ldou">Shorts</span><span data-hf-id="hf-lqg4">Playlists</span><span data-hf-id="hf-9ba8">Posts</span></div>
+            <div data-hf-id="hf-u24x" class="sect">Videos</div>
+            <div data-hf-id="hf-9lkg" class="videos">
+              <div data-hf-id="hf-mxpy" class="v"><div data-hf-id="hf-6e1p" class="thumb t1"><span data-hf-id="hf-en6c" class="dur">7:27</span></div><h5 data-hf-id="hf-xgrv">Claude Code Mods Explained: The UI You Can Program | A…</h5><p data-hf-id="hf-9dw8">1 · 4h ago</p></div>
+              <div data-hf-id="hf-ik62" class="v"><div data-hf-id="hf-cjri" class="thumb t2"><span data-hf-id="hf-lpt7" class="dur">9:06</span></div><h5 data-hf-id="hf-mptt">Kolibri Is Here: 78B, 3B Active, 1M Context | AI | AI …</h5><p data-hf-id="hf-qkko">233 · 1d ago</p></div>
+              <div data-hf-id="hf-iyh3" class="v"><div data-hf-id="hf-ghvj" class="thumb t3"><span data-hf-id="hf-223f" class="dur">8:56</span></div><h5 data-hf-id="hf-0v3g">I Turned 20 AI Agent Tabs Into a Company — Paperclip…</h5><p data-hf-id="hf-fcro">63 · 2d ago</p></div>
+              <div data-hf-id="hf-jcs4" class="v"><div data-hf-id="hf-kfzk" class="thumb t4"><span data-hf-id="hf-c1k5" class="dur">7:06</span></div><h5 data-hf-id="hf-4xw6">Manus 2.0: Not a Version Update — New Architecture,…</h5><p data-hf-id="hf-432s">71 · 3d ago</p></div>
+              <div data-hf-id="hf-jr35" class="v"><div data-hf-id="hf-l7nd" class="thumb t5"><span data-hf-id="hf-5dcz" class="dur">8:38</span></div><h5 data-hf-id="hf-mds4">Gemini 4 Argon: Google's Best AI You Can't Use. | AI | …</h5><p data-hf-id="hf-950q">241 · 4d ago</p></div>
+              <div data-hf-id="hf-k5e6" class="v"><div data-hf-id="hf-p5re" class="thumb t6"><span data-hf-id="hf-im8m" class="dur">7:29</span></div><h5 data-hf-id="hf-tffq">GPT-6.1 SoI Explained: Benchmarks, Pricing &amp; …</h5><p data-hf-id="hf-6qut">131 · 5d ago</p></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#page", { opacity: 0, scale: 1.04 }, { opacity: 1, scale: 1, duration: 0.8, ease: "power2.out" }, 0);
+        tl.to("#page", { scale: 1.03, duration: 7.2, ease: "none" }, 0.8);
+        window.__timelines["yt-channel-page"] = tl;
+      </script>
+    </template>
+  </body>
+</html>

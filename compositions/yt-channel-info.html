@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" data-composition-variables="[
+    {&quot;id&quot;:&quot;channelName&quot;,&quot;type&quot;:&quot;string&quot;,&quot;label&quot;:&quot;Channel name&quot;,&quot;default&quot;:&quot;Free Coder&quot;},
+    {&quot;id&quot;:&quot;channelHandle&quot;,&quot;type&quot;:&quot;string&quot;,&quot;label&quot;:&quot;Channel handle&quot;,&quot;default&quot;:&quot;@therefactorengine&quot;},
+    {&quot;id&quot;:&quot;subCount&quot;,&quot;type&quot;:&quot;string&quot;,&quot;label&quot;:&quot;Subscriber count&quot;,&quot;default&quot;:&quot;187 subscribers&quot;},
+    {&quot;id&quot;:&quot;videoCount&quot;,&quot;type&quot;:&quot;string&quot;,&quot;label&quot;:&quot;Video count&quot;,&quot;default&quot;:&quot;106 videos&quot;},
+    {&quot;id&quot;:&quot;tagline&quot;,&quot;type&quot;:&quot;string&quot;,&quot;label&quot;:&quot;Tagline&quot;,&quot;default&quot;:&quot;Learn Build and Share — Python, Django and AI for every builder.&quot;}
+  ]">
+  <head>
+    <meta charset="UTF-8">
+  </head>
+  <body>
+    <template>
+      <style>
+        #root { position: absolute; inset: 0; background: transparent; font-family: Roboto, Arial, Helvetica, ui-sans-serif, system-ui, sans-serif; }
+        .ci-wrap { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+        .ci-card { position: relative; width: 1100px; background: #111318; border: 1px solid #262a33; border-radius: 32px; padding: 64px 72px; box-shadow: 0 40px 120px rgba(0,0,0,0.55); will-change: transform; }
+        .ci-row { display: flex; align-items: center; gap: 40px; }
+        .ci-avatar { width: 148px; height: 148px; border-radius: 50%; border: 4px solid #6d28d9; object-fit: cover; flex: none; }
+        .ci-name { font-size: 64px; font-weight: 800; color: #ffffff; letter-spacing: -0.02em; line-height: 1.1; }
+        .ci-handle { margin-top: 10px; font-size: 26px; color: #9aa3b2; }
+        .ci-stats { margin-top: 28px; display: flex; gap: 20px; }
+        .ci-stat { background: #1b1e27; border: 1px solid #2a2f3a; border-radius: 18px; padding: 18px 30px; }
+        .ci-stat b { display: block; font-size: 34px; color: #a78bfa; font-weight: 800; }
+        .ci-stat span { font-size: 18px; color: #8b93a3; text-transform: uppercase; letter-spacing: 0.12em; }
+        .ci-tag { margin-top: 34px; font-size: 28px; color: #d7dbe4; line-height: 1.5; }
+        .ci-glow { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(124,58,237,0.35), transparent 70%); top: -180px; right: -140px; pointer-events: none; }
+      </style>
+
+      <div data-hf-id="hf-8w8d" id="root" data-composition-id="yt-channel-info" data-width="1920" data-height="1080" data-start="0" data-duration="8">
+        <div data-hf-id="hf-gonx" class="ci-wrap">
+          <div data-hf-id="hf-9ia4" id="ci-card" class="ci-card clip" data-start="0" data-duration="8" data-track-index="0">
+            <div data-hf-id="hf-lypv" class="ci-glow" data-layout-allow-overflow=""></div>
+            <div data-hf-id="hf-hi4v" class="ci-row">
+              <img data-hf-id="hf-pn21" id="ci-avatar" class="ci-avatar" src="assets/avatar.jpg" alt="Channel avatar">
+              <div data-hf-id="hf-yeow">
+                <div data-hf-id="hf-w83w" id="ci-name" class="ci-name" data-var-text="channelName">Free Coder</div>
+                <div data-hf-id="hf-7zkr" id="ci-handle" class="ci-handle" data-var-text="channelHandle">@therefactorengine</div>
+              </div>
+            </div>
+            <div data-hf-id="hf-qezq" class="ci-stats">
+              <div data-hf-id="hf-vqyx" id="ci-stat1" class="ci-stat"><b data-hf-id="hf-dvvn" data-var-text="subCount">187 subscribers</b><span data-hf-id="hf-vgsi">Community</span></div>
+              <div data-hf-id="hf-zp2y" id="ci-stat2" class="ci-stat"><b data-hf-id="hf-v1y8" data-var-text="videoCount">106 videos</b><span data-hf-id="hf-nyld">Uploads</span></div>
+            </div>
+            <p data-hf-id="hf-abqx" id="ci-tag" class="ci-tag" data-var-text="tagline">Learn Build and Share — Python, Django and AI for every builder.</p>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        const tl = gsap.timeline({ paused: true });
+        tl.fromTo("#ci-card", { scale: 0.9, opacity: 0, y: 50 }, { scale: 1, opacity: 1, y: 0, duration: 0.7, ease: "back.out(1.4)" }, 0);
+        tl.fromTo("#ci-avatar", { scale: 0, rotation: -30 }, { scale: 1, rotation: 0, duration: 0.6, ease: "back.out(2)" }, 0.35);
+        tl.fromTo("#ci-name", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.55);
+        tl.fromTo("#ci-handle", { opacity: 0, x: 30 }, { opacity: 1, x: 0, duration: 0.5, ease: "power3.out" }, 0.7);
+        tl.fromTo("#ci-stat1", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 1.0);
+        tl.fromTo("#ci-stat2", { opacity: 0, y: 24 }, { opacity: 1, y: 0, duration: 0.45, ease: "power2.out" }, 1.15);
+        tl.fromTo("#ci-tag", { opacity: 0, y: 16 }, { opacity: 1, y: 0, duration: 0.5, ease: "power2.out" }, 1.45);
+        tl.to("#ci-card", { y: -14, duration: 3.2, ease: "sine.inOut", yoyo: true, repeat: 1 }, 2.2);
+        window.__timelines["yt-channel-info"] = tl;
+      </script>
+    </template>
+  </body>
+</html>
